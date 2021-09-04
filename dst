@@ -1,0 +1,14 @@
+#!/bin/bash
+screen_master=$"master"
+screen_cave=$"cave"
+cmd_master=$"./master_start.sh"
+cmd_cave=$"./cave_start.sh"
+cd /home/dstserver/bin
+screen -dmS $screen_master
+screen -x -S $screen_master -p 0 -X stuff "$cmd_master"
+screen -x -S $screen_master -p 0 -X stuff $'\n'
+screen -x -S $screen_master -p 0 -X stuff $'exit'
+screen -dmS $screen_cave
+screen -x -S $screen_cave -p 0 -X stuff "$cmd_cave"
+screen -x -S $screen_cave -p 0 -X stuff $'\n'
+screen -x -S $screen_cave -p 0 -X stuff $'exit'
