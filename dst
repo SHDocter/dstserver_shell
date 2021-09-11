@@ -11,5 +11,5 @@ screen -x -S $screen_cave -p 0 -X stuff $'exit'
 screen -dmS $screen_master
 screen -x -S $screen_master -p 0 -X stuff "$cmd_master"
 screen -x -S $screen_master -p 0 -X stuff $'\n'
-#方便查看 不退出master的后台 如需退出 取消下方的注释
-#screen -x -S $screen_master -p 0 -X stuff $'exit'
+screen -x -S $screen_master -p 0 -X stuff $'exit'
+screen -r -S $screen_master
